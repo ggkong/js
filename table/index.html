@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+    <script type="text/javascript" src="Chart.js/Chart.bundle.js"></script>
+</head>
+
+<body>
+<canvas id="myChart"></canvas>
+
+<!-- 柱状图 --><!-- 
+<script>
+    (function(){
+
+        //var type = 'pie';
+        var type = 'bar';
+
+        // 数据部分
+        var data = {
+
+            labels : [2014,2015,2016,2017,2018],
+            datasets:[
+                {
+                    label: 'kong',
+                    data:[100,200,400,800,2600],
+                    borderColor:'red',
+                   	backgroundColor: 'blue',
+                   	borderWidth:2,
+
+                },
+
+                {
+
+                    label:'ge',
+                    data:[50,100,200,400,600]
+                }
+
+            ]
+        };
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+
+        var chart = new Chart(ctx, {
+            type:type,
+            data:data,
+            options:{
+            	scales:{
+            		// 坐标轴
+            		yAxes:[{
+            			ticks:{
+            				suggestedMin:0,
+            				suggestedMax:2000,
+            				stepSize: 400,
+            				callback: function(value,index){
+            					return value + '万人'
+            				},
+            			}
+            		}]
+            	},
+                // 标题部分
+                title:{
+                    display: true,
+                    text: 'hello world',
+                    fontColor: 'red',
+                    fontSize: '28',
+                    position: 'top',
+                },
+
+                // 图例
+               	legend :{
+               		position:'right',
+               		display: true,
+               	},
+
+               	//曲线的动画效果
+               	animation: {
+               		duration:1000,
+               		easing:'easeOutQuart',
+               	}
+
+            }
+        });
+
+    })();
+
+
+</script> -->
+
+
+<!-- 饼状图 -->
+<script>
+	(function(){
+		var type = 'doughnut';
+		var data = {
+			labels :['吃','喝','玩'],
+			datasets :[
+				{
+					data :[10,20,70],
+					backgroundColor: ['green','gray','skyblue']
+				}
+			]
+		};
+
+		var options = {
+			title:{
+				display: true,
+				text: '花销占比',
+			},
+		};
+
+		var ctx = document.getElementById('myChart');
+		//ctx.setAttribute("width","400px")
+		//ctx.setAttribute("height","400px")
+		
+
+		var chart = new Chart(ctx, {
+			type:type,
+			data: data,
+			options:options
+		})
+	})()
+</script>
+
+</body>
+</html>
