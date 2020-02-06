@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>CSS3 3D折叠二级下拉菜单</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+<div id="container">
+<ul id="menu">
+	<li id="big"><a href="#" id="tihuan">属性一</a>
+		<ul id = 'solect'>
+			<li><a href="#">属性二</a></li>
+			<li><a href="#">属性三</a></li>
+			<li><a href="#">属性四</a></li>
+			<li><a href="#">属性五</a></li>
+			<li><a href="#">属性六</a></li>
+		</ul>
+	</li>
+	
+</ul>
+</div>
+
+<script type="text/javascript">
+	var big  = document.getElementById('big');
+	var solect = document.getElementById('solect');
+	var tihuan = document.getElementById('tihuan');
+	console.log(tihuan.innerHTML);
+	
+
+	for (var i = 0; i < solect.children.length; i++) {
+		solect.children[i].addEventListener('click', function() {
+			console.log(this.innerText);
+			var a = this.innerText;
+			this.innerText = tihuan.innerText;
+			tihuan.innerText = a;
+			this.innerHTML = '<a href="#">'+this.innerText+'</a>'
+			
+		})
+	}
+	
+</script>
+
+</body>
+
+</html>
